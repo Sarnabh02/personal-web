@@ -70,7 +70,7 @@
 
         /* ── HERO ── */
         #hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             padding: 120px 40px 80px;
@@ -188,10 +188,25 @@
         }
 
         /* ── SKILLS ── */
+        .skills-groups {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .skill-group-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
         }
 
         .skill-item {
@@ -511,6 +526,18 @@
         }
 
         /* ── ANIMATIONS ── */
+        .cursor {
+            display: inline-block;
+            color: var(--accent);
+            animation: blink 0.7s step-end infinite;
+            font-weight: 300;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(24px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -553,14 +580,11 @@
                 <span class="badge-dot"></span>
                 Open to Technical & Problem-Solving Roles
             </div>
-            <h1>
-                I like to build <br>
-                <span class="gradient-text">useful technology.</span>
-            </h1>
+            <h1 id="hero-heading" style="font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.5px; min-height: 3.2em;"></h1>
             <p class="hero-bio">
-                I'm <strong>Sarnabh Mukhopadhyay</strong> — MSCS at <strong>Northwestern University</strong>,
-                focused on AI, Algorithms, Statistics, and Mechatronics. Previously at <strong>UIUC</strong>
-                studying Statistics & Computer Science and Cognitive Science.
+                I build useful technology and am currently pursuing MSCS at <strong>Northwestern University</strong>,
+                focused on AI, Algorithms, Statistics, and Mechatronics. Previously studied at <strong>UIUC</strong>
+                majoring in Statistics & Computer Science and Cognitive Science.
             </p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">View Projects ↓</a>
@@ -675,23 +699,48 @@
     <section id="skills" class="fade-in">
         <p class="section-label">Tech Stack</p>
         <h2>Skills &amp; Tools</h2>
-        <div class="skills-grid">
-            <div class="skill-item"><span class="skill-icon">🐍</span> Python</div>
-            <div class="skill-item"><span class="skill-icon">⚡</span> C / C++</div>
-            <div class="skill-item"><span class="skill-icon">🔥</span> PyTorch</div>
-            <div class="skill-item"><span class="skill-icon">🤖</span> ROS / ROS2</div>
-            <div class="skill-item"><span class="skill-icon">👁️</span> OpenCV</div>
-            <div class="skill-item"><span class="skill-icon">📊</span> NumPy / Pandas</div>
-            <div class="skill-item"><span class="skill-icon">🧠</span> Machine Learning</div>
-            <div class="skill-item"><span class="skill-icon">🛠️</span> Embedded Systems</div>
-            <div class="skill-item"><span class="skill-icon">☁️</span> Linux / Git</div>
-            <div class="skill-item"><span class="skill-icon">📐</span> MATLAB</div>
-            <div class="skill-item"><span class="skill-icon">📈</span> R</div>
-            <div class="skill-item"><span class="skill-icon">🌐</span> Flask</div>
-            <div class="skill-item"><span class="skill-icon">🦾</span> Robot Kinematics</div>
-            <div class="skill-item"><span class="skill-icon">🔬</span> SciPy / Scikit-learn</div>
-            <div class="skill-item"><span class="skill-icon">📡</span> Raspberry Pi</div>
-            <div class="skill-item"><span class="skill-icon">🗃️</span> SQL</div>
+        <div class="skills-groups">
+
+            <div>
+                <div class="skill-group-label">Languages</div>
+                <div class="skills-grid">
+                    <div class="skill-item"><span class="skill-icon">🐍</span> Python</div>
+                    <div class="skill-item"><span class="skill-icon">⚡</span> C / C++</div>
+                    <div class="skill-item"><span class="skill-icon">📈</span> R</div>
+                    <div class="skill-item"><span class="skill-icon">📐</span> MATLAB</div>
+                    <div class="skill-item"><span class="skill-icon">🗃️</span> SQL</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="skill-group-label">AI & Data</div>
+                <div class="skills-grid">
+                    <div class="skill-item"><span class="skill-icon">🔥</span> PyTorch</div>
+                    <div class="skill-item"><span class="skill-icon">📊</span> NumPy / Pandas</div>
+                    <div class="skill-item"><span class="skill-icon">🔬</span> SciPy / Scikit-learn</div>
+                    <div class="skill-item"><span class="skill-icon">🧠</span> Machine Learning</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="skill-group-label">Robotics</div>
+                <div class="skills-grid">
+                    <div class="skill-item"><span class="skill-icon">🤖</span> ROS / ROS2</div>
+                    <div class="skill-item"><span class="skill-icon">👁️</span> OpenCV</div>
+                    <div class="skill-item"><span class="skill-icon">🦾</span> Robot Kinematics</div>
+                    <div class="skill-item"><span class="skill-icon">🛠️</span> Embedded Systems</div>
+                    <div class="skill-item"><span class="skill-icon">📡</span> Raspberry Pi</div>
+                </div>
+            </div>
+
+            <div>
+                <div class="skill-group-label">Tools</div>
+                <div class="skills-grid">
+                    <div class="skill-item"><span class="skill-icon">☁️</span> Linux / Git</div>
+                    <div class="skill-item"><span class="skill-icon">🌐</span> Flask</div>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -828,6 +877,27 @@
         }, { threshold: 0.4 });
 
         document.querySelectorAll('video.project-video').forEach(v => videoObserver.observe(v));
+
+        // Typing animation for hero heading — runs independently, doesn't block page
+        requestAnimationFrame(function () {
+            const el = document.getElementById('hero-heading');
+            const line1 = "Hello, I'm";
+            const line2 = "Sarnabh Mukhopadhyay";
+            let phase = 1, i = 0;
+
+            function type() {
+                if (phase === 1) {
+                    el.innerHTML = line1.slice(0, i) + '<span class="cursor">|</span>';
+                    if (i < line1.length) { i++; setTimeout(type, 35); }
+                    else { phase = 2; i = 0; setTimeout(type, 120); }
+                } else {
+                    el.innerHTML = line1 + '<br><span class="gradient-text">' + line2.slice(0, i) + '</span><span class="cursor">|</span>';
+                    if (i < line2.length) { i++; setTimeout(type, 35); }
+                    else { el.innerHTML = line1 + '<br><span class="gradient-text">' + line2 + '</span>'; }
+                }
+            }
+            type();
+        });
     </script>
 </body>
 </html>
