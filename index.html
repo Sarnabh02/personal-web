@@ -76,6 +76,7 @@
             padding: 120px 40px 80px;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
         }
 
         .hero-inner {
@@ -185,6 +186,25 @@
             font-weight: 700;
             letter-spacing: -0.8px;
             margin-bottom: 40px;
+        }
+
+        /* ── SCROLL ARROW ── */
+        .scroll-down {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--muted);
+            text-decoration: none;
+            animation: bounce 2s ease-in-out infinite;
+            transition: color 0.2s;
+        }
+
+        .scroll-down:hover { color: var(--accent); }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50%       { transform: translateX(-50%) translateY(8px); }
         }
 
         /* ── SKILLS ── */
@@ -600,12 +620,16 @@
                 majoring in Statistics & Computer Science and Cognitive Science.
             </p>
             <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View Projects ↓</a>
                 <a href="https://www.linkedin.com/in/sarnabh-mukhopadhyay/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
                 <a href="https://github.com/Sarnabh02" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
                 <a href="mailto:sarnabh21@gmail.com" class="btn btn-outline">Email</a>
             </div>
         </div>
+        <a href="#projects" class="scroll-down" aria-label="Scroll down">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </a>
     </section>
 
     <div class="divider"></div>
