@@ -295,7 +295,9 @@
             border: 1px solid var(--border);
             background: #000;
             max-height: 340px;
-            object-fit: cover;
+            object-fit: contain;
+            position: relative;
+            z-index: 1;
         }
 
         .tag-list {
@@ -316,6 +318,16 @@
             font-weight: 500;
         }
 
+        .project-desc code {
+            font-family: "SF Mono", "Fira Code", "Consolas", monospace;
+            font-size: 0.85em;
+            background: rgba(79, 70, 229, 0.07);
+            color: var(--accent);
+            border: 1px solid rgba(79, 70, 229, 0.15);
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
         .project-link {
             display: inline-flex;
             align-items: center;
@@ -328,6 +340,77 @@
         }
 
         .project-link:hover { gap: 10px; }
+
+        /* ── EXPERIENCE ── */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .exp-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px 28px;
+            transition: all 0.2s;
+        }
+
+        .exp-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+            gap: 16px;
+        }
+
+        .exp-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: var(--muted);
+            white-space: nowrap;
+            padding-top: 2px;
+        }
+
+        .exp-org {
+            font-size: 0.88rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .exp-bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .exp-bullets li {
+            font-size: 0.9rem;
+            color: var(--muted);
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .exp-bullets li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: var(--border-hover);
+        }
 
         /* ── ABOUT ── */
         #about .about-grid {
@@ -456,6 +539,7 @@
         <span class="nav-logo">Sarn M.</span>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -469,7 +553,7 @@
                 Open to Technical & Problem-Solving Roles
             </div>
             <h1>
-                I build AI<br>
+                I build tech<br>
                 <span class="gradient-text">to solve problems.</span>
             </h1>
             <p class="hero-bio">
@@ -503,6 +587,12 @@
             <div class="skill-item"><span class="skill-icon">🛠️</span> Embedded Systems</div>
             <div class="skill-item"><span class="skill-icon">☁️</span> Linux / Git</div>
             <div class="skill-item"><span class="skill-icon">📐</span> MATLAB</div>
+            <div class="skill-item"><span class="skill-icon">📈</span> R</div>
+            <div class="skill-item"><span class="skill-icon">🌐</span> Flask</div>
+            <div class="skill-item"><span class="skill-icon">🦾</span> Robot Kinematics</div>
+            <div class="skill-item"><span class="skill-icon">🔬</span> SciPy / Scikit-learn</div>
+            <div class="skill-item"><span class="skill-icon">📡</span> Raspberry Pi</div>
+            <div class="skill-item"><span class="skill-icon">🗃️</span> SQL</div>
         </div>
     </section>
 
@@ -516,24 +606,71 @@
 
             <article class="project-card">
                 <div class="project-header">
-                    <h3>Measuring Distance</h3>
-                    <span class="project-status status-live">Live Demo</span>
+                    <h3>Ultrasonic Distance Sensor</h3>
+                    <span class="project-status status-live">Hardware</span>
                 </div>
                 <p class="project-desc">
-                    A computer vision system that measures real-world distances from monocular video input
-                    using geometric depth estimation and camera calibration.
+                    Raspberry Pi Pico embedded system that measures distance via ultrasonic time-of-flight and displays readings live on a 4-digit 7-segment display.
                 </p>
                 <video class="project-video" controls loop muted playsinline preload="metadata">
+                    
                     <source src="assets_measuring-distance.mp4" type="video/mp4">
-                    <source src="IMG_3351.MOV" type="video/quicktime">
+                </video>
+                <div class="tag-list">
+                    <span class="tag">C</span>
+                    <span class="tag">Raspberry Pi Pico</span>
+                    <span class="tag">Embedded Systems</span>
+                    <span class="tag">Timer Interrupts</span>
+                    <span class="tag">Pico SDK</span>
+                </div>
+                <a href="https://github.com/Sarnabh02/ultra-dist-measure" target="_blank" rel="noopener" class="project-link">
+                    View on GitHub →
+                </a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>UR3 Robot Drawing</h3>
+                    <span class="project-status status-live">Robotics</span>
+                </div>
+                <p class="project-desc">
+                    A pipeline that takes a digital image, extracts its contours using computer vision, and commands a UR3 robot arm to physically draw it on paper using forward and inverse kinematics.
+                </p>
+                <video class="project-video" controls loop muted playsinline preload="metadata">
+                    <source src="car_drawing_vid.mp4" type="video/mp4">
                 </video>
                 <div class="tag-list">
                     <span class="tag">Python</span>
+                    <span class="tag">ROS</span>
                     <span class="tag">OpenCV</span>
-                    <span class="tag">Computer Vision</span>
-                    <span class="tag">Depth Estimation</span>
+                    <span class="tag">Kinematics</span>
+                    <span class="tag">UR3 Robot Arm</span>
                 </div>
-                <a href="https://github.com/Sarnabh02" target="_blank" rel="noopener" class="project-link">
+                <a href="https://github.com/Sarnabh02/UR3_Robot_Drawing" target="_blank" rel="noopener" class="project-link">
+                    View on GitHub →
+                </a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>UR3 Tower of Hanoi</h3>
+                    <span class="project-status status-live">Robotics</span>
+                </div>
+                <p class="project-desc">
+                    The robot uses pre-defined joint-space waypoints, a suction cup gripper, and analog sensor feedback to pick, transport, and place disks across pegs — executing the full 7-move sequence from a user-specified source to destination peg.
+                </p>
+                <video class="project-video" controls loop muted playsinline preload="metadata">
+                    <source src="IMG_2206.mp4" type="video/mp4">
+                </video>
+                <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">ROS</span>
+                    <span class="tag">UR3 Robot Arm</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Suction Gripper</span>
+                    <span class="tag">Joint-Space Control</span>
+                </div>
+                <a href="https://github.com/Sarnabh02/UR3-Tower-of-Hanoi" target="_blank" rel="noopener" class="project-link">
                     View on GitHub →
                 </a>
             </article>
@@ -559,6 +696,47 @@
 
     <div class="divider"></div>
 
+    <!-- EXPERIENCE -->
+    <section id="experience" class="fade-in delay-2">
+        <p class="section-label">Experience</p>
+        <h2>Work &amp; Research</h2>
+        <div class="experience-list">
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <h3>AI Research Intern — Students Pushing Innovation (SPIN)</h3>
+                    <span class="exp-date">Aug 2023 – Jan 2025</span>
+                </div>
+                <div class="exp-org">National Center for Supercomputing Applications · Urbana, IL</div>
+                <ul class="exp-bullets">
+                    <li>Developed hierarchical linear models to analyze word-skipping behavior in readers, using predictors like word length, lexical and syntactic context, positional information, and word frequency.</li>
+                    <li>Used ANOVA to select best-fitting frequentist models of skipping for verbs and nouns.</li>
+                    <li>Created interactive 3D graphs in R to visualize skipping behavior across multiple variables.</li>
+                    <li>Built scripts to visualize correlations among quantitative measures of reading behavior.</li>
+                </ul>
+            </div>
+
+            <div class="exp-card">
+                <div class="exp-header">
+                    <h3>Undergraduate Research Assistant</h3>
+                    <span class="exp-date">June 2022 – May 2023</span>
+                </div>
+                <div class="exp-org">University of Illinois Urbana-Champaign · Champaign, IL</div>
+                <ul class="exp-bullets">
+                    <li>Developed and improved interactive features of an educational web application using the Flask framework.</li>
+                    <li>Implemented a search-bar filtering feature allowing users to efficiently find specific course materials.</li>
+                    <li>Collaborated weekly with the research team to iterate on the application based on user needs.</li>
+                </ul>
+                <a href="https://github.com/Bhaavya/EducationalWeb" target="_blank" rel="noopener" class="project-link" style="margin-top: 14px; display: inline-flex;">
+                    View on GitHub →
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- ABOUT -->
     <section id="about" class="fade-in delay-2">
         <p class="section-label">About</p>
@@ -567,13 +745,13 @@
             <div class="about-text">
                 <img src="ProfilePic.jpeg" alt="Sarnabh Mukhopadhyay" class="profile-pic">
                 <p>
-                    I'm passionate about building <strong>AI that feels like a natural extension of human capability</strong> —
-                    intelligent systems that reduce cognitive friction by actively assisting in the physical world.
+                    I'm passionate about building <strong>technology that feels like a natural extension of human capability</strong> —
+                    end-to-end systems that reduce cognitive friction by actively assisting users in tasks.
                 </p>
                 <p>
-                    I combine <strong>machine learning, robotics, and mechatronics</strong> to develop technology
-                    that helps people achieve their goals more efficiently. I'm particularly drawn to the gap between
-                    where AI works in simulation and where it needs to work in the real world.
+                    Specifically, I like to use tools from  <strong>machine learning, algorithms, data science, robotics, and mechatronics</strong> to develop technological solutions
+                    that helps people achieve their goals efficiently. I'm drawn to the gap between
+                    where technology works in theory and where it needs to work in the real world for users.
                 </p>
                 <p>
                     Beyond engineering, I'm fascinated by <strong>cognitive science and neuroscience</strong> —
@@ -619,6 +797,7 @@
         </p>
         <div class="contact-links">
             <a href="mailto:sarnabh21@gmail.com" class="btn btn-primary">Send an Email</a>
+            <a href="mailto:sarnabh21@gmail.com?subject=Resume%20Request&body=Hi%20Sarnabh%2C%0A%0AI%27d%20love%20to%20see%20your%20resume.%20Could%20you%20send%20it%20over%3F%0A%0AThanks!" class="btn btn-outline">Request Resume</a>
             <a href="https://www.linkedin.com/in/sarnabh-mukhopadhyay/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
             <a href="https://github.com/Sarnabh02" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
         </div>
@@ -635,6 +814,19 @@
             history.replaceState(null, '', window.location.pathname);
         }
         window.scrollTo(0, 0);
+
+        // Autoplay videos when scrolled into view, pause when out
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play();
+                } else {
+                    entry.target.pause();
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('video.project-video').forEach(v => videoObserver.observe(v));
     </script>
 </body>
 </html>
