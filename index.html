@@ -366,9 +366,22 @@
         .exp-card {
             background: var(--surface);
             border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
             border-radius: 16px;
             padding: 24px 28px;
             transition: all 0.2s;
+        }
+
+        .exp-role-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 100px;
+            background: rgba(79, 70, 229, 0.07);
+            color: var(--accent);
+            border: 1px solid rgba(79, 70, 229, 0.15);
+            margin-bottom: 6px;
         }
 
         .exp-card:hover {
@@ -753,11 +766,12 @@
         <div class="experience-list">
 
             <div class="exp-card">
+                <span class="exp-role-badge">Research · Internship</span>
                 <div class="exp-header">
-                    <h3>AI Research Intern — Students Pushing Innovation (SPIN)</h3>
+                    <h3>AI Research Intern</h3>
                     <span class="exp-date">Aug 2023 – Jan 2025</span>
                 </div>
-                <div class="exp-org">National Center for Supercomputing Applications · Urbana, IL</div>
+                <div class="exp-org">National Center for Supercomputing Applications (SPIN) · Urbana, IL</div>
                 <ul class="exp-bullets">
                     <li>Developed hierarchical linear models to analyze word-skipping behavior in readers, using predictors like word length, lexical and syntactic context, positional information, and word frequency.</li>
                     <li>Used ANOVA to select best-fitting frequentist models of skipping for verbs and nouns.</li>
@@ -767,6 +781,7 @@
             </div>
 
             <div class="exp-card">
+                <span class="exp-role-badge">Research · Part-time</span>
                 <div class="exp-header">
                     <h3>Undergraduate Research Assistant</h3>
                     <span class="exp-date">June 2022 – May 2023</span>
@@ -790,7 +805,7 @@
     <!-- ABOUT -->
     <section id="about" class="fade-in delay-2">
         <p class="section-label">About</p>
-        <h2>A bit about me</h2>
+        <h2>About Me</h2>
         <div class="about-grid">
             <div class="about-text">
                 <img src="ProfilePic.jpeg" alt="Sarnabh Mukhopadhyay" class="profile-pic">
@@ -799,8 +814,8 @@
                     end-to-end systems that reduce cognitive friction by actively assisting users in tasks.
                 </p>
                 <p>
-                    Specifically, I like to use tools from  <strong>machine learning, algorithms, data science, robotics, and mechatronics</strong> to develop technological solutions
-                    that helps people achieve their goals efficiently. I'm drawn to the gap between
+                    Specifically, I use tools from <strong>machine learning, algorithms, data science, robotics, and mechatronics</strong> to develop technological solutions
+                    that help people achieve their goals efficiently. I'm drawn to the gap between
                     where technology works in theory and where it needs to work in the real world for users.
                 </p>
                 <p>
