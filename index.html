@@ -195,13 +195,21 @@
             bottom: 36px;
             left: 50%;
             transform: translateX(-50%);
-            color: var(--muted);
+            color: #fff;
             text-decoration: none;
             animation: bounce 2s ease-in-out infinite;
-            transition: color 0.2s;
+            transition: opacity 0.2s;
+            background: var(--grad);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
         }
 
-        .scroll-down:hover { color: var(--accent); }
+        .scroll-down:hover { opacity: 0.85; }
 
         @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
