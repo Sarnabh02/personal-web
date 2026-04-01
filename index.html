@@ -344,6 +344,31 @@
             z-index: 1;
         }
 
+        .project-videos-row {
+            display: flex;
+            gap: 12px;
+            margin: 8px 0 16px;
+        }
+
+        .project-video-labeled {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .project-video-labeled .project-video {
+            margin: 0;
+        }
+
+        .video-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
         .tag-list {
             display: flex;
             flex-wrap: wrap;
@@ -620,7 +645,7 @@
         <div class="hero-inner">
             <h1 id="hero-heading" style="font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.5px; min-height: 3.2em;"></h1>
             <p class="hero-bio">
-                I build useful technology and am currently pursuing MSCS at <strong>Northwestern University</strong>,
+                I like to build useful technology and am currently pursuing MSCS at <strong>Northwestern University</strong>,
                 focused on AI, Algorithms, Statistics, and Mechatronics. Previously studied at <strong>UIUC</strong>
                 majoring in Statistics & Computer Science and Cognitive Science.
             </p>
@@ -660,8 +685,7 @@
                     <span class="project-status status-live">AI / Full-Stack</span>
                 </div>
                 <p class="project-desc">
-                    An AI-powered education assistant that transforms any topic or uploaded document into a structured learning experience. Breaks subjects down to first principles, generates tiered practice problems, and coaches students through them using Socratic dialogue — never giving direct answers, always guiding discovery.
-                </p>
+                    An AI-powered education assistant that transforms any topic or uploaded document into a structured learning experience. Breaks subjects down to first principles, generates tiered practice problems for mastery, and provides detailed step-by-step solutions. 
                 <video class="project-video" controls loop muted playsinline preload="metadata">
                     <source src="Learn_AI_demo.mp4" type="video/mp4">
                 </video>
@@ -748,6 +772,41 @@
                 </div>
                 <a href="https://github.com/Sarnabh02/UR3-Tower-of-Hanoi" target="_blank" rel="noopener" class="project-link">
                     View on GitHub →
+                </a>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h3>Atari Breakout — Deep RL Agent</h3>
+                    <span class="project-status status-live">AI / Reinforcement Learning</span>
+                </div>
+                <p class="project-desc">
+                    Deep reinforcement learning agent trained to play Atari Breakout using PyTorch and the OpenAI Gymnasium environment. Implemented and compared two architectures — Deep Q-Network (DQN) and Double Deep Q-Network (DDQN) — to reduce overestimation bias and improve policy stability.
+                </p>
+                <div class="project-videos-row">
+                    <div class="project-video-labeled">
+                        <span class="video-label">DQN</span>
+                        <video class="project-video" controls loop muted playsinline preload="metadata">
+                            <source src="rl-video-episode-0_DQN.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="project-video-labeled">
+                        <span class="video-label">DDQN</span>
+                        <video class="project-video" controls loop muted playsinline preload="metadata">
+                            <source src="rl-video-episode-0_DDQN.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">DQN</span>
+                    <span class="tag">DDQN</span>
+                    <span class="tag">OpenAI Gymnasium</span>
+                    <span class="tag">Reinforcement Learning</span>
+                </div>
+                <a href="mailto:sarnabh21@gmail.com" class="project-link">
+                    Reach out for code →
                 </a>
             </article>
 
@@ -885,18 +944,14 @@
             <div class="about-text">
                 <img src="ProfilePic.jpeg" alt="Sarnabh Mukhopadhyay" class="profile-pic">
                 <p>
-                    I'm passionate about building <strong>technology that feels like a natural extension of human capability</strong> —
-                    end-to-end systems that reduce cognitive friction by actively assisting users in tasks.
+                    I am passionate about building technology that feels like a natural extension of human capability —
+                    specifically end-to-end systems that reduce cognitive friction by actively assisting users in tasks.
                 </p>
                 <p>
-                    I like to use tools from <strong>machine learning, algorithms, data science, robotics, and mechatronics</strong> to develop technological solutions
-                    that help people achieve their goals efficiently. I'm particularly drawn to the gap between
-                    where technology works in theory and where it needs to work in the real world for users.
+                    I have worked on various projects spanning machine learning, algorithms, data science, robotics, and mechatronics - drawn to problems where these areas intersect. With this experience, I'm particularly drawn to shaping cutting edge technology research into useful products for users.
                 </p>
                 <p>
-                    Beyond engineering, I'm fascinated by <strong>cognitive science and neuroscience</strong> —
-                    understanding human intelligence to build more meaningful AI. Outside of research,
-                    you'll find me on the tennis court or soccer field, or out hiking, swimming, and biking.
+                    Beyond engineering, I'm fascinated by cognitive science and neuroscience — trying to understand how humans learn and reason to build meaningful systems that assist them. Outside of that, I'll be at the tennis court or the soccer field, or out hiking, swimming, and biking.
                 </p>
             </div>
             <div class="about-highlights">
@@ -916,12 +971,7 @@
                     <div class="sub">Cognitive Science · Neuroscience</div>
                 </div>
                 
-                <div class="highlight-card">
-                    <div class="label">Location</div>
-                    <div class="value">Libertyville</div>
-                    <div class="sub">Greater Chicago Area</div>
-                    
-                </div>
+                
             </div>
         </div>
     </section>
